@@ -94,3 +94,77 @@ figcaption p {
 [data-theme='dark'] .academic-table thead {
     background-color: #333;
 }
+
+
+/* 目录大纲样式 */
+.toc-sidebar {
+    display: none;
+}
+
+@media screen and (min-width: 64em) {
+    article {
+        max-width: 1100px !important;
+    }
+    .toc-sidebar {
+        display: block;
+        position: sticky;
+        top: 40px;
+        height: fit-content;
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+        padding-right: 20px;
+        border-right: 1px solid #eee;
+    }
+}
+
+.toc-wrapper {
+    background: #fdfdfd;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.toc-title {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #ecf15f;
+    color: #333;
+}
+
+#TableOfContents ul {
+    list-style: none;
+    padding-left: 15px;
+    margin: 5px 0;
+}
+
+#TableOfContents > ul {
+    padding-left: 0;
+}
+
+#TableOfContents li {
+    margin: 8px 0;
+}
+
+#TableOfContents a {
+    color: #666;
+    font-size: 0.95em;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+#TableOfContents a:hover {
+    color: #74c78d;
+    text-decoration: underline;
+}
+
+[data-theme='dark'] .toc-wrapper {
+    background: #252525;
+    border-color: #444;
+}
+
+[data-theme='dark'] .toc-title {
+    color: #eee;
+    border-bottom-color: #74c78d;
+}
