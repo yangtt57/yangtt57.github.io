@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tty1のblog</title>
+    <link>https://yangtt57.github.io/</link>
+    <description>Recent content on tty1のblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 04 Feb 2026 17:42:00 +0800</lastBuildDate><atom:link href="https://yangtt57.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A</title>
+      <link>https://yangtt57.github.io/posts/paper_notes/a/</link>
+      <pubDate>Wed, 04 Feb 2026 17:42:00 +0800</pubDate>
+      
+      <guid>https://yangtt57.github.io/posts/paper_notes/a/</guid>
+      <description>hhhhh</description>
+    </item>
+    
+    <item>
+      <title>Start</title>
+      <link>https://yangtt57.github.io/posts/start/</link>
+      <pubDate>Wed, 04 Feb 2026 14:26:00 +0800</pubDate>
+      
+      <guid>https://yangtt57.github.io/posts/start/</guid>
+      <description>闲来无事，搭个博客
+ 普瑞赛斯
+  </description>
+    </item>
+    
+    <item>
+      <title>关于我</title>
+      <link>https://yangtt57.github.io/about/</link>
+      <pubDate>Wed, 04 Feb 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://yangtt57.github.io/about/</guid>
+      <description>这里是TTY1（实名上网），从2025年秋季开始我在中山大学网络空间安全学院攻读博士学位。我主要研究方向是二进制代码相似性检测，程序分析，机器学习等，欢迎交流探讨！
+How to reach me: yangtt57 at mail2.sysu.edu.cn | WeChat: y15806701307</description>
+    </item>
+    
+  </channel>
+</rss>

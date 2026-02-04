@@ -1,0 +1,44 @@
+/* 引入霞鹜文楷字体 */
+@import url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css');
+
+/* 全站使用霞鹜文楷字体 */
+body, article, .markdown-body {
+    font-family: "LXGW WenKai", sans-serif !important;
+}
+
+/* 图片整体居中，增加间距 */
+figure {
+    text-align: center;
+    margin: 30px auto;
+    padding: 10px;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+}
+
+/* 设置图片标题风格 */
+figcaption h4 {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* 设置详情描述风格 */
+figcaption p {
+    font-size: 0.9em;
+    color: #888;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+/* 作者名字字体风格 */
+.header-title a {
+    font-family: "LXGW WenKai", sans-serif; /* 霞鹜文楷 */
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: 0.1em; /* 字母间距 */
+    background: linear-gradient(135deg, #ecf15f 0%, #74c78d 100%); /* 渐变色 */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
