@@ -103,14 +103,15 @@ figcaption p {
 
 @media screen and (min-width: 64em) {
     article {
-        max-width: 1100px !important;
+        max-width: 1200px !important; /* 稍微放宽文章整体宽度 */
     }
     .toc-sidebar {
         display: block;
         position: sticky;
-        top: 40px;
+        top: 2rem; /* 距离顶部更近 */
+        margin-top: 2rem;
         height: fit-content;
-        max-height: calc(100vh - 80px);
+        max-height: calc(100vh - 4rem);
         overflow-y: auto;
         padding-right: 20px;
         border-right: 1px solid #eee;
