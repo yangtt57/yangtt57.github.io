@@ -108,12 +108,14 @@ figcaption p {
     .toc-sidebar {
         display: block;
         position: sticky;
-        top: 2rem; /* 距离顶部更近 */
-        margin-top: 2rem;
+        top: 10rem; /* 距离顶部更近 */
+        left: 0px;
+        width: 200px; 
+        margin-top: 0rem;
         height: fit-content;
         max-height: calc(100vh - 4rem);
         overflow-y: auto;
-        padding-right: 20px;
+        padding-right: 10px;
         border-right: 1px solid #eee;
     }
 }
