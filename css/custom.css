@@ -13,6 +13,15 @@ figure {
     padding: 10px;
     border: 1px solid #f0f0f0;
     border-radius: 8px;
+    display: block; /* 确保 figure 是块级元素 */
+}
+
+/* 确保内部图片居中且自适应 */
+figure img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* 核心居中代码 */
 }
 
 /* 设置图片标题风格 */
