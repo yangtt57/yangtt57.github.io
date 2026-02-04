@@ -65,7 +65,7 @@ How to reach me: yangtt57 at mail2.sysu.edu.cn | WeChat: y15806701307"
   
   <link
     rel="stylesheet"
-    href="/css/custom.css?v=2"
+    href="/css/custom.css?v=3"
   /> <link href="/index.xml" rel="alternate" type="application/rss+xml" title="tty1のblog">
   
   <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -166,7 +166,23 @@ How to reach me: yangtt57 at mail2.sysu.edu.cn | WeChat: y15806701307"
     })();
   </script>
   
-  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+            {left: '\(', right: '\)', display: false},
+            {left: '\[', right: '\]', display: true}
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+
 </head>
 
 

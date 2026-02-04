@@ -28,7 +28,7 @@
       "articleSection" : "posts",
       "name" : "Start",
       "headline" : "Start",
-      "description" : "闲来无事，搭个博客\n 普瑞赛斯\n  ",
+      "description" : "闲来无事，搭个博客\n 普瑞赛斯\n  常用命令 在vscode配置通过直接输入 acatable 直接生成表格\n{{\u0026lt; table \u0026gt;}} | Header 1 | Header 2 | Header 3 | | :--- | :--- | :--- | | | | | {{\u0026lt; \/table \u0026gt;}} ",
       "inLanguage" : "en-US",
       "author" : "TTY1",
       "creator" : "TTY1",
@@ -49,13 +49,15 @@
     property="og:description"
     content="闲来无事，搭个博客
  普瑞赛斯
-  "
+  常用命令 在vscode配置通过直接输入 acatable 直接生成表格
+{{&amp;lt; table &amp;gt;}} | Header 1 | Header 2 | Header 3 | | :--- | :--- | :--- | | | | | {{&amp;lt; /table &amp;gt;}} "
   />
   <meta
     name="description"
     content="闲来无事，搭个博客
  普瑞赛斯
-  "
+  常用命令 在vscode配置通过直接输入 acatable 直接生成表格
+{{&amp;lt; table &amp;gt;}} | Header 1 | Header 2 | Header 3 | | :--- | :--- | :--- | | | | | {{&amp;lt; /table &amp;gt;}} "
   />
   <meta property="og:locale" content="en-us" /><meta property="og:image" content="favicon.ico" />
   
@@ -67,7 +69,7 @@
   
   <link
     rel="stylesheet"
-    href="/css/custom.css?v=2"
+    href="/css/custom.css?v=3"
   /> <link href="/index.xml" rel="alternate" type="application/rss+xml" title="tty1のblog">
   
   <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -168,7 +170,23 @@
     })();
   </script>
   
-  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+            {left: '\(', right: '\)', display: false},
+            {left: '\[', right: '\]', display: true}
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+
 </head>
 
 
@@ -237,7 +255,14 @@
         </figcaption>
 </figure>
 
-
+<h2 id="常用命令">常用命令</h2>
+<p>在vscode配置通过直接输入 <code>acatable</code> 直接生成表格</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown">{{<span class="p">&lt;</span> <span class="nt">table</span> <span class="p">&gt;</span>}}
+| Header 1 | Header 2 | Header 3 |
+| :--- | :--- | :--- |
+|  |  |  |
+{{<span class="p">&lt;</span> <span class="p">/</span><span class="nt">table</span> <span class="p">&gt;</span>}}
+</code></pre></div>
         </div>
 
         <div class="row middle-xs">

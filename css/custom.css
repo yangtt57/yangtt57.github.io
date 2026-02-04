@@ -42,3 +42,55 @@ figcaption p {
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
+
+
+/* 让行内公式稍微大一点，并增加间距 */
+.katex {
+    font-size: 1.1em; 
+    text-rendering: auto;
+    margin: 0 0.15em;
+}
+
+/* 优化整行大公式（Display Mode） */
+.katex-display {
+    margin: 1.8em 0;
+    padding: 15px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* 增加一个非常淡的底色和圆角，看起来更有深度 */
+    background-color: rgba(0, 0, 0, 0.02); 
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+/* 鼠标悬停时稍微加深，增加交互感 */
+.katex-display:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+/* 解决深色模式下的适配 */
+[data-theme='dark'] .katex-display {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+/* 学术风格表格模板样式 */
+.academic-table table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    border-radius: 8px !important;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.academic-table thead {
+    background-color: #f2f2f2;
+}
+
+.academic-table th, .academic-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+}
+
+[data-theme='dark'] .academic-table thead {
+    background-color: #333;
+}

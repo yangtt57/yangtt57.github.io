@@ -8,12 +8,12 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 04 Feb 2026 17:42:00 +0800</lastBuildDate><atom:link href="https://yangtt57.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>A</title>
-      <link>https://yangtt57.github.io/posts/paper_notes/a/</link>
+      <title>(论文阅读\ OOPSLA&#39;25) BinCrypto</title>
+      <link>https://yangtt57.github.io/posts/paper_notes/bincrypto/</link>
       <pubDate>Wed, 04 Feb 2026 17:42:00 +0800</pubDate>
       
-      <guid>https://yangtt57.github.io/posts/paper_notes/a/</guid>
-      <description>hhhhh</description>
+      <guid>https://yangtt57.github.io/posts/paper_notes/bincrypto/</guid>
+      <description>Binary Cryptographic Function Identification via Similarity Analysis with Path-Insensitive Emulation 论文信息  论文标题: Binary Cryptographic Function Identification via Similarity Analysis with Path-Insensitive Emulation 发表会议: OOPSLA 2025 论文链接: https://doi.org/10.1145/3720415 作者: Yikun Hu, Yituo He, Wenyu He, Haoran Li, Yubo Zhao, Shuai Wang, Dawu Gu  论文摘要 </description>
     </item>
     
     <item>
@@ -24,7 +24,8 @@
       <guid>https://yangtt57.github.io/posts/start/</guid>
       <description>闲来无事，搭个博客
  普瑞赛斯
-  </description>
+  常用命令 在vscode配置通过直接输入 acatable 直接生成表格
+{{&amp;lt; table &amp;gt;}} | Header 1 | Header 2 | Header 3 | | :--- | :--- | :--- | | | | | {{&amp;lt; /table &amp;gt;}} </description>
     </item>
     
   </channel>
