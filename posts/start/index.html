@@ -28,7 +28,7 @@
       "articleSection" : "posts",
       "name" : "Start",
       "headline" : "Start",
-      "description" : "闲来无事，搭个博客\n 普瑞赛斯\n  常用命令 在vscode配置通过直接输入 acatable 直接生成表格\n{{\u0026lt; table \u0026gt;}} | Header 1 | Header 2 | Header 3 | | :--- | :--- | :--- | | | | | {{\u0026lt; \/table \u0026gt;}} 可以通过下面的命令带标题的插入图片\n Caption Text\n  ",
+      "description" : "闲来无事，搭个博客\n 普瑞赛斯\n  常用命令 在vscode配置通过直接输入 acatable 直接生成表格\n{{\u0026lt; table \u0026gt;}} | Header 1 | Header 2 | Header 3 | | :--- | :--- | :--- | | | | | {{\u0026lt; \/table \u0026gt;}} 可以通过下面的命令带标题的插入图片\n{{\u0026lt; figure src=\u0026#34;path\/to\/image.png\u0026#34; alt=\u0026#34;Alt Text\u0026#34; caption=\u0026#34;Caption Text\u0026#34; \u0026gt;}} ",
       "inLanguage" : "en-US",
       "author" : "TTY1",
       "creator" : "TTY1",
@@ -51,8 +51,7 @@
  普瑞赛斯
   常用命令 在vscode配置通过直接输入 acatable 直接生成表格
 {{&amp;lt; table &amp;gt;}} | Header 1 | Header 2 | Header 3 | | :--- | :--- | :--- | | | | | {{&amp;lt; /table &amp;gt;}} 可以通过下面的命令带标题的插入图片
- Caption Text
-  "
+{{&amp;lt; figure src=&amp;#34;path/to/image.png&amp;#34; alt=&amp;#34;Alt Text&amp;#34; caption=&amp;#34;Caption Text&amp;#34; &amp;gt;}} "
   />
   <meta
     name="description"
@@ -60,8 +59,7 @@
  普瑞赛斯
   常用命令 在vscode配置通过直接输入 acatable 直接生成表格
 {{&amp;lt; table &amp;gt;}} | Header 1 | Header 2 | Header 3 | | :--- | :--- | :--- | | | | | {{&amp;lt; /table &amp;gt;}} 可以通过下面的命令带标题的插入图片
- Caption Text
-  "
+{{&amp;lt; figure src=&amp;#34;path/to/image.png&amp;#34; alt=&amp;#34;Alt Text&amp;#34; caption=&amp;#34;Caption Text&amp;#34; &amp;gt;}} "
   />
   <meta property="og:locale" content="en-us" /><meta property="og:image" content="favicon.ico" />
   
@@ -177,6 +175,21 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var codeBlocks = document.querySelectorAll('code.language-mermaid');
+        codeBlocks.forEach(function(code) {
+            var pre = code.parentElement;
+            var div = document.createElement('div');
+            div.className = 'mermaid';
+            div.textContent = code.textContent;
+            pre.parentElement.replaceChild(div, pre);
+        });
+        mermaid.initialize({ startOnLoad: true });
+        mermaid.init(undefined, '.mermaid');
+    });
+</script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         renderMathInElement(document.body, {
@@ -281,12 +294,7 @@
 |  |  |  |
 {{<span class="p">&lt;</span> <span class="p">/</span><span class="nt">table</span> <span class="p">&gt;</span>}}
 </code></pre></div><p>可以通过下面的命令带标题的插入图片</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><figure><img src="path/to/image.png"
-         alt="Alt Text"/><figcaption>
-            <p>Caption Text</p>
-        </figcaption>
-</figure>
-
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown">{{<span class="p">&lt;</span> <span class="nt">figure</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;path/to/image.png&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;Alt Text&#34;</span> <span class="na">caption</span><span class="o">=</span><span class="s">&#34;Caption Text&#34;</span> <span class="p">&gt;</span>}}
 </code></pre></div>
         </div>
 

@@ -28,7 +28,7 @@
       "articleSection" : "posts",
       "name" : "南大软分课程笔记",
       "headline" : "南大软分课程笔记",
-      "description" : " 两年前跟着视频学了一次，但当时感觉学的比较糙，最近准备重新系统地学习一遍，顺便记录一些笔记。由于时间有限，这次主要跟着这位大佬的blog来学习：南大软分课程笔记\n 01 介绍 Sound and Complete 莱斯定理 指出对于所有非平凡的程序性质（即某个性质适用于一些程序，但是不适用于另一些程序），判断某个程序是否具备这个性质是不可判定的。他揭示了许多程序分析任务（如分析程序的行为、程序的正确性、程序是否会终止等）都无法通过算法来完全解决。\n完美的静态分析是即满足Soundness（无漏报）又满足Completeness（无误报）的分析。然而根据莱斯定理，任何非平凡的程序性质都不可判定，因此不存在既Sound又Complete的静态分析。\nSound 是指分析结果绝对没有遗漏任何真实存在的程序行为或错误。这意味着，如果程序在实际执行中有某个问题必然会发生，Sound 的分析器一定会报告它（绝不漏报），但可能会包含一些实际上不会发生的警告（即可能有误报）。\ndef check_value(x): y = 10 if x \u0026gt; 100: y = 0 # 只有当 x \u0026gt; 100 时，y 才会是 0 else: y = 5 result = 100 \/ y # 这里有潜在的除零风险 在上面的例子中，如果静态分析器是sound的，它会报告除零风险，因为当 x \u0026gt; 100 时，y 可能为 0。即使在实际运行中，x 可能永远不会大于 100，分析器仍然会报告这个风险，以确保没有遗漏任何可能的错误。\nComplete 是指分析结果绝对没有误报任何不存在的程序行为或错误。这意味着，如果分析是complete的，那么它报告的所有问题在程序实际执行中都必然会发生（无误报），但可能会遗漏一些真实存在的问题（即可能有漏报）。 同样在上面的例子中，如果静态分析器是complete的，它可能不会报告除零风险，因为在实际运行中，x 可能永远不会大于 100，从而 y 永远不会为 0。这样，分析器确保没有误报任何不存在的错误，但可能会遗漏一些真实存在的问题。\n Sound and Complete\n  02 中间语言 03 数据流分析应用 一 04 数据流分析应用 二 05 数据流分析理论 一 06 数据流分析理论 二 07 过程间分析 08 指针分析 09 指针分析基础 一 10 指针分析基础 二 11 上下文敏感的指针分析 一 12 上下文敏感的指针分析 二 13 静态分析在安全中的应用 14 基于Datalog的静态分析 15 \u0026amp; 16 IFDS与Soundinessreloa 北大软分 - 抽象解释 ",
+      "description" : "两年前跟着视频学了一次，但当时感觉学的比较糙，最近准备重新系统地学习一遍，顺便记录一些笔记。由于时间有限，这次主要跟着这位大佬的blog来学习：南大软分课程笔记\n 01 介绍 Sound and Complete 莱斯定理 指出对于所有非平凡的程序性质（即某个性质适用于一些程序，但是不适用于另一些程序），判断某个程序是否具备这个性质是不可判定的。他揭示了许多程序分析任务（如分析程序的行为、程序的正确性、程序是否会终止等）都无法通过算法来完全解决。\n完美的静态分析是即满足Soundness（无漏报）又满足Completeness（无误报）的分析。然而根据莱斯定理，任何非平凡的程序性质都不可判定，因此不存在既Sound又Complete的静态分析。\nSound 是指分析结果绝对没有遗漏任何真实存在的程序行为或错误。这意味着，如果程序在实际执行中有某个问题必然会发生，Sound 的分析器一定会报告它（绝不漏报），但可能会包含一些实际上不会发生的警告（即可能有误报）。\ndef check_value(x): y = 10 if x \u0026gt; 100: y = 0 # 只有当 x \u0026gt; 100 时，y 才会是 0 else: y = 5 result = 100 \/ y # 这里有潜在的除零风险 在上面的例子中，如果静态分析器是sound的，它会报告除零风险，因为当 x \u0026gt; 100 时，y 可能为 0。即使在实际运行中，x 可能永远不会大于 100，分析器仍然会报告这个风险，以确保没有遗漏任何可能的错误。\nComplete 是指分析结果绝对没有误报任何不存在的程序行为或错误。这意味着，如果分析是complete的，那么它报告的所有问题在程序实际执行中都必然会发生（无误报），但可能会遗漏一些真实存在的问题（即可能有漏报）。 同样在上面的例子中，如果静态分析器是complete的，它可能不会报告除零风险，因为在实际运行中，x 可能永远不会大于 100，从而 y 永远不会为 0。这样，分析器确保没有误报任何不存在的错误，但可能会遗漏一些真实存在的问题。\n Sound and Complete\n  Abstraction \u0026amp; Over-approximation 大多数静态分析都可以使用abstraction和over-approximation这两个词进行概括，后者又可以划分为transfer function和control flows。",
       "inLanguage" : "en-US",
       "author" : "TTY1",
       "creator" : "TTY1",
@@ -47,25 +47,25 @@
   <meta property="og:type" content="article" />
   <meta
     property="og:description"
-    content=" 两年前跟着视频学了一次，但当时感觉学的比较糙，最近准备重新系统地学习一遍，顺便记录一些笔记。由于时间有限，这次主要跟着这位大佬的blog来学习：南大软分课程笔记
+    content="两年前跟着视频学了一次，但当时感觉学的比较糙，最近准备重新系统地学习一遍，顺便记录一些笔记。由于时间有限，这次主要跟着这位大佬的blog来学习：南大软分课程笔记
  01 介绍 Sound and Complete 莱斯定理 指出对于所有非平凡的程序性质（即某个性质适用于一些程序，但是不适用于另一些程序），判断某个程序是否具备这个性质是不可判定的。他揭示了许多程序分析任务（如分析程序的行为、程序的正确性、程序是否会终止等）都无法通过算法来完全解决。
 完美的静态分析是即满足Soundness（无漏报）又满足Completeness（无误报）的分析。然而根据莱斯定理，任何非平凡的程序性质都不可判定，因此不存在既Sound又Complete的静态分析。
 Sound 是指分析结果绝对没有遗漏任何真实存在的程序行为或错误。这意味着，如果程序在实际执行中有某个问题必然会发生，Sound 的分析器一定会报告它（绝不漏报），但可能会包含一些实际上不会发生的警告（即可能有误报）。
 def check_value(x): y = 10 if x &amp;gt; 100: y = 0 # 只有当 x &amp;gt; 100 时，y 才会是 0 else: y = 5 result = 100 / y # 这里有潜在的除零风险 在上面的例子中，如果静态分析器是sound的，它会报告除零风险，因为当 x &amp;gt; 100 时，y 可能为 0。即使在实际运行中，x 可能永远不会大于 100，分析器仍然会报告这个风险，以确保没有遗漏任何可能的错误。
 Complete 是指分析结果绝对没有误报任何不存在的程序行为或错误。这意味着，如果分析是complete的，那么它报告的所有问题在程序实际执行中都必然会发生（无误报），但可能会遗漏一些真实存在的问题（即可能有漏报）。 同样在上面的例子中，如果静态分析器是complete的，它可能不会报告除零风险，因为在实际运行中，x 可能永远不会大于 100，从而 y 永远不会为 0。这样，分析器确保没有误报任何不存在的错误，但可能会遗漏一些真实存在的问题。
  Sound and Complete
-  02 中间语言 03 数据流分析应用 一 04 数据流分析应用 二 05 数据流分析理论 一 06 数据流分析理论 二 07 过程间分析 08 指针分析 09 指针分析基础 一 10 指针分析基础 二 11 上下文敏感的指针分析 一 12 上下文敏感的指针分析 二 13 静态分析在安全中的应用 14 基于Datalog的静态分析 15 &amp;amp; 16 IFDS与Soundinessreloa 北大软分 - 抽象解释 "
+  Abstraction &amp;amp; Over-approximation 大多数静态分析都可以使用abstraction和over-approximation这两个词进行概括，后者又可以划分为transfer function和control flows。"
   />
   <meta
     name="description"
-    content=" 两年前跟着视频学了一次，但当时感觉学的比较糙，最近准备重新系统地学习一遍，顺便记录一些笔记。由于时间有限，这次主要跟着这位大佬的blog来学习：南大软分课程笔记
+    content="两年前跟着视频学了一次，但当时感觉学的比较糙，最近准备重新系统地学习一遍，顺便记录一些笔记。由于时间有限，这次主要跟着这位大佬的blog来学习：南大软分课程笔记
  01 介绍 Sound and Complete 莱斯定理 指出对于所有非平凡的程序性质（即某个性质适用于一些程序，但是不适用于另一些程序），判断某个程序是否具备这个性质是不可判定的。他揭示了许多程序分析任务（如分析程序的行为、程序的正确性、程序是否会终止等）都无法通过算法来完全解决。
 完美的静态分析是即满足Soundness（无漏报）又满足Completeness（无误报）的分析。然而根据莱斯定理，任何非平凡的程序性质都不可判定，因此不存在既Sound又Complete的静态分析。
 Sound 是指分析结果绝对没有遗漏任何真实存在的程序行为或错误。这意味着，如果程序在实际执行中有某个问题必然会发生，Sound 的分析器一定会报告它（绝不漏报），但可能会包含一些实际上不会发生的警告（即可能有误报）。
 def check_value(x): y = 10 if x &amp;gt; 100: y = 0 # 只有当 x &amp;gt; 100 时，y 才会是 0 else: y = 5 result = 100 / y # 这里有潜在的除零风险 在上面的例子中，如果静态分析器是sound的，它会报告除零风险，因为当 x &amp;gt; 100 时，y 可能为 0。即使在实际运行中，x 可能永远不会大于 100，分析器仍然会报告这个风险，以确保没有遗漏任何可能的错误。
 Complete 是指分析结果绝对没有误报任何不存在的程序行为或错误。这意味着，如果分析是complete的，那么它报告的所有问题在程序实际执行中都必然会发生（无误报），但可能会遗漏一些真实存在的问题（即可能有漏报）。 同样在上面的例子中，如果静态分析器是complete的，它可能不会报告除零风险，因为在实际运行中，x 可能永远不会大于 100，从而 y 永远不会为 0。这样，分析器确保没有误报任何不存在的错误，但可能会遗漏一些真实存在的问题。
  Sound and Complete
-  02 中间语言 03 数据流分析应用 一 04 数据流分析应用 二 05 数据流分析理论 一 06 数据流分析理论 二 07 过程间分析 08 指针分析 09 指针分析基础 一 10 指针分析基础 二 11 上下文敏感的指针分析 一 12 上下文敏感的指针分析 二 13 静态分析在安全中的应用 14 基于Datalog的静态分析 15 &amp;amp; 16 IFDS与Soundinessreloa 北大软分 - 抽象解释 "
+  Abstraction &amp;amp; Over-approximation 大多数静态分析都可以使用abstraction和over-approximation这两个词进行概括，后者又可以划分为transfer function和control flows。"
   />
   <meta property="og:locale" content="en-us" /><meta property="og:image" content="favicon.ico" />
   
@@ -181,6 +181,21 @@ Complete 是指分析结果绝对没有误报任何不存在的程序行为或�
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var codeBlocks = document.querySelectorAll('code.language-mermaid');
+        codeBlocks.forEach(function(code) {
+            var pre = code.parentElement;
+            var div = document.createElement('div');
+            div.className = 'mermaid';
+            div.textContent = code.textContent;
+            pre.parentElement.replaceChild(div, pre);
+        });
+        mermaid.initialize({ startOnLoad: true });
+        mermaid.init(undefined, '.mermaid');
+    });
+</script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         renderMathInElement(document.body, {
@@ -211,10 +226,24 @@ Complete 是指分析结果绝对没有误报任何不存在的程序行为或�
     <li><a href="#01-介绍">01 介绍</a>
       <ul>
         <li><a href="#sound-and-complete">Sound and Complete</a></li>
+        <li><a href="#abstraction--over-approximation">Abstraction &amp; Over-approximation</a></li>
       </ul>
     </li>
-    <li><a href="#02-中间语言">02 中间语言</a></li>
-    <li><a href="#03-数据流分析应用-一">03 数据流分析应用 一</a></li>
+    <li><a href="#02-中间语言">02 中间语言</a>
+      <ul>
+        <li><a href="#前言">前言</a></li>
+        <li><a href="#compilers-and-static-analyzers">Compilers and Static Analyzers</a></li>
+        <li><a href="#三地址码">三地址码</a></li>
+        <li><a href="#静态单赋值">静态单赋值</a></li>
+        <li><a href="#control-flow-analysis">Control Flow Analysis</a></li>
+      </ul>
+    </li>
+    <li><a href="#03-数据流分析应用-一">03 数据流分析应用 一</a>
+      <ul>
+        <li><a href="#前言-1">前言</a></li>
+        <li><a href="#reaching-definitions-analysis">Reaching Definitions Analysis</a></li>
+      </ul>
+    </li>
     <li><a href="#04-数据流分析应用-二">04 数据流分析应用 二</a></li>
     <li><a href="#05-数据流分析理论-一">05 数据流分析理论 一</a></li>
     <li><a href="#06-数据流分析理论-二">06 数据流分析理论 二</a></li>
@@ -313,8 +342,225 @@ Complete 是指分析结果绝对没有误报任何不存在的程序行为或�
         </figcaption>
 </figure>
 
+<h3 id="abstraction--over-approximation">Abstraction &amp; Over-approximation</h3>
+<p>大多数静态分析都可以使用abstraction和over-approximation这两个词进行概括，后者又可以划分为transfer function和control flows。</p>
+<p><strong>Abstraction</strong>，将变量从concrete domain映射到abstract domain。程序在运行时，变量的值有无穷种可能（例如具体的整数），如果分析工具要追踪每一个具体的值，就可能会导致状态爆炸。所以，我们需要忽略一些细节，只关注关键特征。
+<figure><img src="/images/concrete2abstract.png"
+         alt="Concrete domain to abstract domain"/><figcaption>
+            <p>Concrete domain to abstract domain, contrains five symbols: + - 0 ⊤ ⊥</p>
+        </figcaption>
+</figure>
+</p>
+<p><strong>Over-approximation</strong>，是为了之前讨论的soundness的实现手段。因为我们做了abtraction，丢失了一些细节，导致很多时候我们无法精确判断，为了确保sound，在遇到不确定的情况时需要涵盖所有的可能性。上面图片中的<code>v = e ? 1 : -1</code> 因为我们不清楚v的值是正还是负还是0，所以为了安全起见，要把所有的结果都算进来，即Top。</p>
+<ul>
+<li><strong>Transfer Function</strong>，指分析器如何处理每一行代码的逻辑。其任务就是给定输入状态，计算这一行代码输出后的状态。
+<figure><img src="/images/transfer_function.png"
+         alt="Transfer Function"/><figcaption>
+            <p>Transfer Function</p>
+        </figcaption>
+</figure>
+</li>
+<li><strong>Control Flows</strong>，指分析器如何处理<code>if/else</code>, <code>while</code>等分支结构。在实际场景中进行控制流相关的静态分析时，由于无枚举所有的路径，我们通常采用flow merging来进行处理。
+<figure><img src="/images/control_flows.png"
+         alt="Control Flows"/><figcaption>
+            <p>Control Flows</p>
+        </figcaption>
+</figure>
+</li>
+</ul>
 <h2 id="02-中间语言">02 中间语言</h2>
+<h3 id="前言">前言</h3>
+<p>为什么需要IR？</p>
+<ul>
+<li>高级语言包含大量语法糖（像三元运算符，多种循环写法等），这对分析器来说很复杂，但是使用IR可以把复杂的操作拆分成简单的指令，便于后续的分析。</li>
+<li>在IR上展开分析可以服用后端这些算法，只需要对不同的语言写前端进行解析即可。</li>
+<li>便于构建CFG，而静态分析中的核心算法都是在CFG上跑的。</li>
+</ul>
+<h3 id="compilers-and-static-analyzers">Compilers and Static Analyzers</h3>
+<p>从下图可以看到，编译通常包括词法分析、语法分析、语义分析等过程，最终生成机器码。静态分析使用的是Translator生成的IR。
+<figure><img src="/images/compile_stage.png"
+         alt="Compile Stage"/><figcaption>
+            <p>Compile Stage</p>
+        </figcaption>
+</figure>
+
+在上面的流程中可以发现有两类常用的中间表示，AST和IR，那么我们为什么要基于IR做静态分析而不是AST呢？看下面这个例子</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">do i = i + 1;
+while(a[i] &lt; v)
+</code></pre></div><p>对应的AST如下：</p>
+<div class="mermaid">graph TD;
+    A(do-while)-->B1(body);
+    A-->B2(<);
+    B1-->C1(assign);
+    B2-->C2("【】");
+    B2-->C3(v);
+    C1-->D1("i");
+    C1-->D2("+");
+    C2-->D3(a);
+    C2-->D4(i);
+    D2-->E1("i");
+    D2-->E2("1");
+</div>
+<p>对应的IR如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="mi">1</span><span class="o">:</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="mi">2</span><span class="o">:</span> <span class="n">t1</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="mi">3</span><span class="o">:</span> <span class="k">if</span> <span class="n">t1</span> <span class="o">&lt;</span> <span class="n">v</span> <span class="k">goto</span> <span class="mi">1</span>
+</code></pre></div><p>可以发现IR要简洁很多，总结一下，AST和IR的各自特点是：
+<div class="academic-table">
+  <table>
+<thead>
+<tr>
+<th style="text-align:left">AST</th>
+<th style="text-align:left">IR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">层次较高，更接近语法结构</td>
+<td style="text-align:left">层次较低，更接近机器码</td>
+</tr>
+<tr>
+<td style="text-align:left">通常是和语言相关的</td>
+<td style="text-align:left">通常是语言无关的</td>
+</tr>
+<tr>
+<td style="text-align:left">适合用于快速类型检查</td>
+<td style="text-align:left">通常是简洁而统一的</td>
+</tr>
+<tr>
+<td style="text-align:left">缺乏控制流信息</td>
+<td style="text-align:left">包含控制流信息</td>
+</tr>
+<tr>
+<td style="text-align:left">-</td>
+<td style="text-align:left">通常用作静态分析的基础</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</p>
+<h3 id="三地址码">三地址码</h3>
+<p>三地址码（3-Address Code）是一种常见的IR表示形式，指的是每条3AC指令至多可以包含三种地址（通常是两个源操作数一个目标操作数）：变量名、常量以及编译器生成的临时变量，并且要求在一条指令的右边最多只有一个操作符。下面是一些常见的3AC形式:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">x = y bop z
+x = uop y
+x = y
+goto L
+if x goto L 
+if x rop y goto L
+</code></pre></div><h3 id="静态单赋值">静态单赋值</h3>
+<p>SSA不是一种指令格式，而是一种对变量的使用约束，它要求所有赋值操作的被赋值变量都需要有一个独特的名字。每个定义都会有一个新名字，这个新名字可以应用在后续的分析中，每个变量都有一个定义。下面是一个SSA的示例：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">3AC:                    SSA:
+p = a + b               p1 = a + b
+q = p - c               q1 = p1 - c
+p = q * d               p2 = q1 * d
+p = e - p               p3 = e - p2
+q = p + q               q2 = p3 + q1
+</code></pre></div><p>有时，某个变量可能受到条件分支影响，处于控制流汇聚的位置（control flow merges），此时就需要使用phi函数来处理，如下图所示：
+<figure><img src="/images/phi.png"
+         alt="SSA control flow merge"/><figcaption>
+            <p>SSA control flow merge</p>
+        </figcaption>
+</figure>
+</p>
+<h3 id="control-flow-analysis">Control Flow Analysis</h3>
+<p>控制流分析通常是指建立CFG，CFG是静态分析的基础结构，他的每个节点可以是一个3AC，也可以是一个基本块，后者更为常见。下图就是输入是目标程序的3AC输出是其对应的CFG。
+<figure><img src="/images/CFG.png"
+         alt="3AC to CFG"/><figcaption>
+            <p>3AC to CFG</p>
+        </figcaption>
+</figure>
+</p>
+<p>基本块（BB）是指一个连续的、最长的3AC序列，该序列有以下两个特性：</p>
+<ul>
+<li>控制流只能从该序列的起始指令进入；</li>
+<li>控制流只能从该序列的最后一条指令退出。</li>
+</ul>
+<p>划分BB的算法：</p>
+<ul>
+<li>确定3AC指令中的leaders，leaders即具有下述特性的指令：
+<ul>
+<li>3AC序列中的第一条指令</li>
+<li>所有有条件跳转或无条件跳转的所有目标指令</li>
+<li>所有有条件跳转或无条件跳转后面的下一条指令</li>
+</ul>
+</li>
+<li>划分BB，BB包含leader指令以及后面紧邻的所有飞leader指令</li>
+</ul>
+<p>构建CFG：</p>
+<ul>
+<li>CFG的节点均为BB</li>
+<li>BB_a 到 BB_b 在下述两种情况下会建立有向边：
+<ul>
+<li>a到b有一个有条件或无条件跳转</li>
+<li>b是a后面的紧邻BB并且a的最后一条指令不是无条件跳转</li>
+</ul>
+</li>
+<li>将原来3AC序列中的所有<code>跳转到某指令标签处</code>改为<code>跳转到某基本块处</code></li>
+<li>通常会在CFG的开头和结尾添加两个虚拟节点，<code>Entry</code> 和 <code>Exit</code></li>
+</ul>
 <h2 id="03-数据流分析应用-一">03 数据流分析应用 一</h2>
+<h3 id="前言-1">前言</h3>
+<p>数据流分析就是在程序不运行的情况下，通过数学推导，预测程序运行时数据行为的技术。他研究的问题是:</p>
+<ul>
+<li>How data flows on CFG?</li>
+<li>How application-specific data flows the nodes（BB/inst）and edges（control flows） of CFG （a program）?
+对于CFG中的nodes，我们需要使用transfer function进行处理；对于edges，我们需要处理控制流，例如在merge点对不同分支的结果进行union处理。不同的数据流分析应用有着不同的数据抽象和不同的流近似安全策略，即不同的transfer function和control flow handling。</li>
+</ul>
+<p>数据流分析中的输入和输出状态：</p>
+<ul>
+<li>每个IR语句的执行将一个输入状态 （$IN$）转换成一个新的输出状态（$OUT$）</li>
+<li>某个IR语句的输入（输出）状态与该语句之前（之后）的program point关联</li>
+</ul>
+<p>在数据流分析应用中，我们通常将每个program point与一个data-flow value关联，这个data-flow value代表了在该点上可以观察到的所有可能的程序状态的抽象集合。对于一个应用来说，所有可能的data-flow values构成的集合成为该应用的domain。</p>
+<p>数据流分析的目标就是解开$IN$ 和 $OUT$的方程组（解约束集合），在这个过程中，如果遇到不确定的情况（如分支汇合），我们必须选择那个最正确的值（safe-approximation contrains over-approximation and under-approximation），并最终让整个系统的数据状态稳定下来（找到解，达到fixed-point）。</p>
+<ul>
+<li>约束集合，在数据流分析中，每一行代码s都有两个未知数 $IN[s]$ 和 $OUT[s]$，这里的约束就是限制 $IN$ 和 $OUT$ 之间关系的方程组。</li>
+<li>找到解就是说分析到达了不动点，就是在某一次计算之后所有program point的data-flow value都不发生变化。</li>
+<li>safe-approximation是说现实中的程序都是很复杂的，我们一般很难得到精确解，这里需要做出妥协，来做出近似，得到安全近似解。</li>
+</ul>
+<h3 id="reaching-definitions-analysis">Reaching Definitions Analysis</h3>
+<p>什么是defination：在程序分析中任何给变量赋值的语句都叫定值，如x=5, y=x+1等。</p>
+<p>什么是定义可达性？</p>
+<blockquote>
+<p>A defination d at program point p reaches a point q if there is a path from p to q that d is not killed along that path.
+不考虑具体的执行路径，如果有一条路径能从赋值语句d（如第一行x=5）到达语句u（如第十行print x），且中间没有其他语句重新给x赋值，我们就说第一行的定值d到达了第十行。</p>
+</blockquote>
+<p><strong>Data Abstraction</strong> 对于定义可达性分析的来说，数据流中的值是一个程序中的所有变量的定义（的指令位置），它们可以用bit vector来表示，第i个变量使用第i个bit表示。在program point p处，$vector[i]=1$ 当且仅当第i行的变量定义能够到达p。</p>
+<p><strong>Transfer Function</strong> 该BB流出的定义 = 该BB新生成的定义 + 其他BB传入的且没有被杀死的定义
+$$OUT[B] = Gen_B \cup (IN[B] - Kill_B)$$</p>
+<p><strong>Control Flows</strong> 当多条路径合并时，我们需要知道的是 有没有一种可能，这个定义能到达这里，所以RDA是一个may Analysis，这里使用并集合并流入的结果
+$$IN[B] = \bigcup_{P \in preds(B)} OUT[P]$$
+<figure><img src="/images/gen_kill.png"
+         alt="Definition gen and kill"/><figcaption>
+            <p>Definition gen and kill</p>
+        </figcaption>
+</figure>
+</p>
+<figure><img src="/images/rda.png"
+         alt="Reaching defination analysis algorithm"/><figcaption>
+            <p>Reaching defination analysis algorithm</p>
+        </figcaption>
+</figure>
+
+<p>为什么RDA这个算法一定会停止？</p>
+<ul>
+<li>有界性，一个程序中的definations是有限的，即bit vector的长度是有限的</li>
+<li>单调性，$OUT[B]$只与$IN[B]$有关，并且要大于等于$IN[B]$，但是$IN[B] = \bigcup OUT[P]$,因此每个循环后的$IN[B]$一定不会减少
+该算法是单调递增的，并且有一个上界（bit vector全部置1），因此最终一定会停止。
+下面是一个RDA算法的示例，除了初始化过程外，这个分析进行了三轮。第三轮中，bit vector没有发生变化，循环终止。最终得到的不同program point处的bit vector就是定义可达性的分析结果。
+<figure><img src="/images/rda_example.png"
+         alt="Reaching defination analysis example"/><figcaption>
+            <p>Reaching defination analysis example</p>
+        </figcaption>
+</figure>
+</li>
+</ul>
+<p>RDA这个算法能用来做什么呢？</p>
+<ul>
+<li>未初始化变量检测，我们在程序入口处为所有变量引入一个dummy defination（$d_{undef}$），如果在用<code>print x</code>的地方RDA发现$d_{undef}$到达此处，就可以报错，“Warning: Variable &lsquo;x&rsquo; may be used uninitialized.”</li>
+<li>循环不变量外提，循环里有一句 x = y + z，RDA 发现，到达这行代码的 y 和 z 的定义，全部都在循环外面，这说明 y 和 z 在循环里根本没变过！编译器可以把这行计算提到循环外面去，避免每次循环都算一遍。</li>
+</ul>
 <h2 id="04-数据流分析应用-二">04 数据流分析应用 二</h2>
 <h2 id="05-数据流分析理论-一">05 数据流分析理论 一</h2>
 <h2 id="06-数据流分析理论-二">06 数据流分析理论 二</h2>
