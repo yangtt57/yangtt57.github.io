@@ -3,7 +3,7 @@
 
 /* 全站使用霞鹜文楷字体 */
 body, article, .markdown-body {
-    font-family: "LXGW WenKai", sans-serif !important;
+    font-family: "LXGW WenKai", sans-serif;
 }
 
 /* 图片整体居中，增加间距 */
@@ -16,9 +16,9 @@ figure {
     display: block; /* 确保 figure 是块级元素 */
 }
 
-/* 确保内部图片居中且自适应 */
-figure img {
-    max-width: 100%;
+/* 确保内部图片居中且自适应，并设置为 0.7 大小 */
+figure img, .markdown-body img {
+    max-width: 70%;
     height: auto;
     display: block;
     margin: 0 auto; /* 核心居中代码 */
@@ -53,8 +53,9 @@ figcaption p {
 }
 
 
-/* 让行内公式稍微大一点，并增加间距 */
+/* 让行内公式稍微大一点，并增加间距，同时确保字体不被全局覆盖 */
 .katex {
+    font-family: KaTeX_Main, "Times New Roman", serif !important;
     font-size: 1.1em; 
     text-rendering: auto;
     margin: 0 0.15em;
@@ -62,9 +63,11 @@ figcaption p {
 
 /* 优化整行大公式（Display Mode） */
 .katex-display {
+    font-family: KaTeX_Main, "Times New Roman", serif !important;
     margin: 1.8em 0;
     padding: 15px;
     overflow-x: auto;
+```
     overflow-y: hidden;
     /* 增加一个非常淡的底色和圆角，看起来更有深度 */
     background-color: rgba(0, 0, 0, 0.02); 

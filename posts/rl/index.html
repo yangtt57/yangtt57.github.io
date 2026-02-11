@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us" prefix="og: http://ogp.me/ns#">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="generator" content="Hugo 0.92.2" />
@@ -7,8 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="TTY1" />
-  <meta property="og:url" content="https://yangtt57.github.io/" />
-  <link rel="canonical" href="https://yangtt57.github.io/" /><link rel="apple-touch-icon" href="favicon.ico" />
+  <meta property="og:url" content="https://yangtt57.github.io/posts/rl/" />
+  <link rel="canonical" href="https://yangtt57.github.io/posts/rl/" /><link rel="apple-touch-icon" href="favicon.ico" />
   <link rel="icon" href="favicon.ico" />
   <link rel="shortcut" href="favicon.ico" /><link
     rel="alternate"
@@ -25,10 +25,10 @@
            "@type": "WebPage",
            "@id": "https:\/\/yangtt57.github.io\/"
       },
-      "articleSection" : "",
-      "name" : "tty1のblog",
-      "headline" : "tty1のblog",
-      "description" : "普瑞赛斯是谁？",
+      "articleSection" : "posts",
+      "name" : "Reinforcement learning",
+      "headline" : "Reinforcement learning",
+      "description" : "我也不知道为什么突然学了强化学习.\n Basic Concepts Grid Exmaple 如下图所示, 一个agent在格子地图上移动个,每次一栋一格,目标就是去到target那里. accessible 是指可以进入的格子,forbidden是指不能进入或者进入会有惩罚的格子,target就是目标格子. 在这个任务中,我们的目标就是来选择一个好的策略,他能够保证无论我们从哪个格子开始都能够到达target,但是这里的好 是不唯一的,可以是不路过forbidden,不走不必要的弯路,不与地图的边界相撞等等. 这个任务的难点在与agent是没有预先获得环境的信息的,他需要通过尝试和犯错误来找到一个好的策略.  Grid Example\n  State and Action State 描述在特定环境中agent的状态,在上面的例子中,agent的状态就是他所处的格子位置,此时的state space就是$S={s_1, \\cdots, s_9}$。对于每个状态，agent有5种可以采取的action（上下左右和保持不动），所有action的集合就是action space, $A = {a_1, \\cdots, a_5}$（这里不同的状态可能会有不同的状态空间）。  Grid and action\n  State Transition 当采取action的时候，agent可能会从一个状态移动到另一个状态，这里过程就被称为state transition，像这样$s_1 \\xrightarrow{a_2} s_2$。如果在状态$s_1$尝试采取$a_1$的时候因为会超出边界,所以被退回$s_1 \\xrightarrow{a_1} s_1$；在状态$s_5$采取$a_2$的时候也会有两种可能,一种是直接可以到达$s_6$但是会被惩罚（这里惩罚对全局来说不一定是坏事，因为总体路径可能是最好的），另一种是直接不可到达$s_6$。下面这个表格给出了状态转移的过程，但是因为我们上面的分析都是确定性的，所以可以给出表格的形式，在一些随机的情况中可能就不是很适用了，这个时候可以采取条件概率这种形式。 $$ p(s_1 | s_1, a_2) = 0, \\ p(s_2 | s_1, a_2) = 1, \\ p(s_3 | s_1, a_2) = 0, \\ p(s_4 | s_1, a_2) = 0, \\ p(s_5 | s_1, a_2) = 0, $$  A tabular representation of the state transition process",
       "inLanguage" : "en-US",
       "author" : "TTY1",
       "creator" : "TTY1",
@@ -38,15 +38,27 @@
       "copyrightYear" : "2026",
       "datePublished": "2026-02-11 15:18:05 \u002b0800 CST",
       "dateModified" : "2026-02-11 15:18:05 \u002b0800 CST",
-      "url" : "https:\/\/yangtt57.github.io\/",
+      "url" : "https:\/\/yangtt57.github.io\/posts\/rl\/",
       "keywords" : [  ]
   }
 </script>
-<title>tty1のblog</title>
-  <meta property="og:title" content="tty1のblog" />
-  <meta property="og:type" content="website" />
-  <meta property="og:description" content="普瑞赛斯是谁？" />
-  <meta name="description" content="普瑞赛斯是谁？" />
+<title>Reinforcement learning</title>
+  <meta property="og:title" content="Reinforcement learning" />
+  <meta property="og:type" content="article" />
+  <meta
+    property="og:description"
+    content="我也不知道为什么突然学了强化学习.
+ Basic Concepts Grid Exmaple 如下图所示, 一个agent在格子地图上移动个,每次一栋一格,目标就是去到target那里. accessible 是指可以进入的格子,forbidden是指不能进入或者进入会有惩罚的格子,target就是目标格子. 在这个任务中,我们的目标就是来选择一个好的策略,他能够保证无论我们从哪个格子开始都能够到达target,但是这里的好 是不唯一的,可以是不路过forbidden,不走不必要的弯路,不与地图的边界相撞等等. 这个任务的难点在与agent是没有预先获得环境的信息的,他需要通过尝试和犯错误来找到一个好的策略.  Grid Example
+  State and Action State 描述在特定环境中agent的状态,在上面的例子中,agent的状态就是他所处的格子位置,此时的state space就是$S={s_1, \cdots, s_9}$。对于每个状态，agent有5种可以采取的action（上下左右和保持不动），所有action的集合就是action space, $A = {a_1, \cdots, a_5}$（这里不同的状态可能会有不同的状态空间）。  Grid and action
+  State Transition 当采取action的时候，agent可能会从一个状态移动到另一个状态，这里过程就被称为state transition，像这样$s_1 \xrightarrow{a_2} s_2$。如果在状态$s_1$尝试采取$a_1$的时候因为会超出边界,所以被退回$s_1 \xrightarrow{a_1} s_1$；在状态$s_5$采取$a_2$的时候也会有两种可能,一种是直接可以到达$s_6$但是会被惩罚（这里惩罚对全局来说不一定是坏事，因为总体路径可能是最好的），另一种是直接不可到达$s_6$。下面这个表格给出了状态转移的过程，但是因为我们上面的分析都是确定性的，所以可以给出表格的形式，在一些随机的情况中可能就不是很适用了，这个时候可以采取条件概率这种形式。 $$ p(s_1 | s_1, a_2) = 0, \ p(s_2 | s_1, a_2) = 1, \ p(s_3 | s_1, a_2) = 0, \ p(s_4 | s_1, a_2) = 0, \ p(s_5 | s_1, a_2) = 0, $$  A tabular representation of the state transition process"
+  />
+  <meta
+    name="description"
+    content="我也不知道为什么突然学了强化学习.
+ Basic Concepts Grid Exmaple 如下图所示, 一个agent在格子地图上移动个,每次一栋一格,目标就是去到target那里. accessible 是指可以进入的格子,forbidden是指不能进入或者进入会有惩罚的格子,target就是目标格子. 在这个任务中,我们的目标就是来选择一个好的策略,他能够保证无论我们从哪个格子开始都能够到达target,但是这里的好 是不唯一的,可以是不路过forbidden,不走不必要的弯路,不与地图的边界相撞等等. 这个任务的难点在与agent是没有预先获得环境的信息的,他需要通过尝试和犯错误来找到一个好的策略.  Grid Example
+  State and Action State 描述在特定环境中agent的状态,在上面的例子中,agent的状态就是他所处的格子位置,此时的state space就是$S={s_1, \cdots, s_9}$。对于每个状态，agent有5种可以采取的action（上下左右和保持不动），所有action的集合就是action space, $A = {a_1, \cdots, a_5}$（这里不同的状态可能会有不同的状态空间）。  Grid and action
+  State Transition 当采取action的时候，agent可能会从一个状态移动到另一个状态，这里过程就被称为state transition，像这样$s_1 \xrightarrow{a_2} s_2$。如果在状态$s_1$尝试采取$a_1$的时候因为会超出边界,所以被退回$s_1 \xrightarrow{a_1} s_1$；在状态$s_5$采取$a_2$的时候也会有两种可能,一种是直接可以到达$s_6$但是会被惩罚（这里惩罚对全局来说不一定是坏事，因为总体路径可能是最好的），另一种是直接不可到达$s_6$。下面这个表格给出了状态转移的过程，但是因为我们上面的分析都是确定性的，所以可以给出表格的形式，在一些随机的情况中可能就不是很适用了，这个时候可以采取条件概率这种形式。 $$ p(s_1 | s_1, a_2) = 0, \ p(s_2 | s_1, a_2) = 1, \ p(s_3 | s_1, a_2) = 0, \ p(s_4 | s_1, a_2) = 0, \ p(s_5 | s_1, a_2) = 0, $$  A tabular representation of the state transition process"
+  />
   <meta property="og:locale" content="en-us" /><meta property="og:image" content="favicon.ico" />
   
   
@@ -194,10 +206,35 @@
 
 
 <body>
-  <article class="posts">
+  <article class="post 简体中文" id="article">
     <div class="row">
-      <div class="col-xs-12">
-        
+      
+      
+      <aside class="col-md-3 hidden-sm hidden-xs toc-sidebar">
+        <div class="toc-wrapper">
+          <div class="toc-title">目录 - Contents</div>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#basic-concepts">Basic Concepts</a>
+      <ul>
+        <li><a href="#grid-exmaple">Grid Exmaple</a></li>
+        <li><a href="#state-and-action">State and Action</a></li>
+        <li><a href="#state-transition">State Transition</a></li>
+        <li><a href="#policy">Policy</a></li>
+        <li><a href="#reward">Reward</a></li>
+        <li><a href="#trajectories-returns-and-episodes">Trajectories, returns, and episodes</a></li>
+        <li><a href="#markov-decision-processes">Markov decision processes</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+      </aside>
+      
+
+      <div class="col-md-9 col-xs-12">
+        <div class="site-header">
+          
 <header>
   <div class="header-title">
     <a href="/"
@@ -224,94 +261,168 @@
 </div>
 <div class="header-line"></div>
 
-        <div id="posts-list">
-          <section>
-            <h1 class="site-date-catalog">2026</h1>
-
-            
-            <div class="row posts-line">
-              <div class="posts-date col-xs-3 col-sm-2">
-                <time datetime="2026-02-11 15:18:05 CST">Feb 11</time>
-              </div>
-              <div class="posts-title col-xs-9 col-sm-10">
-                <div class="row">
-                  <div class="col-xs-11 col-sm-10">
-                    <a href="/posts/rl/">Reinforcement learning</a>
-                  </div>
-                  <div class="col-xs-1 col-sm-2 posts-categories">
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div class="row posts-line">
-              <div class="posts-date col-xs-3 col-sm-2">
-                <time datetime="2026-02-04 19:55:12 CST">Feb 04</time>
-              </div>
-              <div class="posts-title col-xs-9 col-sm-10">
-                <div class="row">
-                  <div class="col-xs-11 col-sm-10">
-                    <a href="/posts/learning/%E5%8D%97%E5%A4%A7%E8%BD%AF%E5%88%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">南大软分课程笔记</a>
-                  </div>
-                  <div class="col-xs-1 col-sm-2 posts-categories">
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div class="row posts-line">
-              <div class="posts-date col-xs-3 col-sm-2">
-                <time datetime="2026-02-04 19:41:19 CST">Feb 04</time>
-              </div>
-              <div class="posts-title col-xs-9 col-sm-10">
-                <div class="row">
-                  <div class="col-xs-11 col-sm-10">
-                    <a href="/posts/research/">研究经验</a>
-                  </div>
-                  <div class="col-xs-1 col-sm-2 posts-categories">
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div class="row posts-line">
-              <div class="posts-date col-xs-3 col-sm-2">
-                <time datetime="2026-02-04 17:42:00 CST">Feb 04</time>
-              </div>
-              <div class="posts-title col-xs-9 col-sm-10">
-                <div class="row">
-                  <div class="col-xs-11 col-sm-10">
-                    <a href="/posts/paper_notes/bincrypto/">OOPSLA&#39;25 BinCrypto</a>
-                  </div>
-                  <div class="col-xs-1 col-sm-2 posts-categories">
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div class="row posts-line">
-              <div class="posts-date col-xs-3 col-sm-2">
-                <time datetime="2026-02-04 14:26:00 CST">Feb 04</time>
-              </div>
-              <div class="posts-title col-xs-9 col-sm-10">
-                <div class="row">
-                  <div class="col-xs-11 col-sm-10">
-                    <a href="/posts/start/">Start</a>
-                  </div>
-                  <div class="col-xs-1 col-sm-2 posts-categories">
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-          </section>
-          
         </div>
+        <header class="post-header">
+          <h1 class="post-title">Reinforcement learning</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2026-02-11 15:18:05 CST">
+                11 Feb 2026
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="">@TTY1</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+          <blockquote>
+<p>我也不知道为什么突然学了强化学习.</p>
+</blockquote>
+<h2 id="basic-concepts">Basic Concepts</h2>
+<h3 id="grid-exmaple">Grid Exmaple</h3>
+<p>如下图所示, 一个agent在格子地图上移动个,每次一栋一格,目标就是去到target那里. accessible 是指可以进入的格子,forbidden是指不能进入或者进入会有惩罚的格子,target就是目标格子. 在这个任务中,我们的目标就是来选择一个好的策略,他能够保证无论我们从哪个格子开始都能够到达target,但是这里的<code>好</code> 是不唯一的,可以是不路过forbidden,不走不必要的弯路,不与地图的边界相撞等等. 这个任务的难点在与agent是没有预先获得环境的信息的,他需要通过尝试和犯错误来找到一个好的策略.
+<figure><img src="https://raw.githubusercontent.com/yangtt57/PicGo-Images/master/img/20260211215532110.png"
+         alt="Grid Example"/><figcaption>
+            <p>Grid Example</p>
+        </figcaption>
+</figure>
+</p>
+<h3 id="state-and-action">State and Action</h3>
+<p><code>State</code> 描述在特定环境中agent的状态,在上面的例子中,agent的状态就是他所处的格子位置,此时的<code>state space</code>就是$S={s_1, \cdots, s_9}$。对于每个状态，agent有5种可以采取的action（上下左右和保持不动），所有action的集合就是<code>action space</code>, $A = {a_1, \cdots, a_5}$（这里不同的状态可能会有不同的状态空间）。
+<figure><img src="https://raw.githubusercontent.com/yangtt57/PicGo-Images/master/img/20260211221121365.png"
+         alt="Grid and action"/><figcaption>
+            <p>Grid and action</p>
+        </figcaption>
+</figure>
+</p>
+<h3 id="state-transition">State Transition</h3>
+<p>当采取action的时候，agent可能会从一个状态移动到另一个状态，这里过程就被称为<code>state transition</code>，像这样$s_1 \xrightarrow{a_2} s_2$。如果在状态$s_1$尝试采取$a_1$的时候因为会超出边界,所以被退回$s_1 \xrightarrow{a_1} s_1$；在状态$s_5$采取$a_2$的时候也会有两种可能,一种是直接可以到达$s_6$但是会被惩罚（这里惩罚对全局来说不一定是坏事，因为总体路径可能是最好的），另一种是直接不可到达$s_6$。下面这个表格给出了状态转移的过程，但是因为我们上面的分析都是确定性的，所以可以给出表格的形式，在一些随机的情况中可能就不是很适用了，这个时候可以采取条件概率这种形式。
+$$
+p(s_1 | s_1, a_2) = 0, \
+p(s_2 | s_1, a_2) = 1, \
+p(s_3 | s_1, a_2) = 0, \
+p(s_4 | s_1, a_2) = 0, \
+p(s_5 | s_1, a_2) = 0,
+$$
+<figure><img src="https://raw.githubusercontent.com/yangtt57/PicGo-Images/master/img/20260211225254101.png"
+         alt="A tabular representation of the state transition process"/><figcaption>
+            <p>A tabular representation of the state transition process</p>
+        </figcaption>
+</figure>
+</p>
+<h3 id="policy">Policy</h3>
+<p><code>Policy</code> 告诉agent在每个状态应该采取的动作，有三种表示方式：</p>
+<ul>
+<li>使用箭头表示在每个格子应该的动作</li>
+<li>使用条件概率，$\pi(a | s)$</li>
+<li>使用表格存储上面的条件概率</li>
+</ul>
+<figure><img src="https://raw.githubusercontent.com/yangtt57/PicGo-Images/master/img/20260211230418813.png"
+         alt="A tabular representation of a policy"/><figcaption>
+            <p>A tabular representation of a policy</p>
+        </figcaption>
+</figure>
+
+<h3 id="reward">Reward</h3>
+<p>当agent在某个状态执行了某个动作之后，他会从环境中得到一些反馈，这个就被称为reward，即$r(s,a)$。Reward值可以是正负和零，正的reward会鼓励agent采取特定的动作，负则会反对某些动作，零的话算是一种微弱的鼓励。在之前的格子示例中的Reward被设计为：</p>
+<ul>
+<li>如果agent尝试越过边界，$reward_{boundary}=-1$</li>
+<li>如果agent尝试进入forbidden，$reward_{forbid}=-1$</li>
+<li>如果agent到达taget，$reward_{target}=+1$</li>
+<li>其他情况下，$r_{other}=0$</li>
+</ul>
+<p>Reward可以视作一种人机交互，通过他我们可以指导agent去做我们希望他做的一些事情，比如在上面例子中的避免超出边界和进入forbidden区域。同样的，我们可以把获取reward这个事情使用两个表示进行表达：表格（只能表示确定性的过程）和条件概率（$p(r=-1|s_1,a_1) = 1, \ p(r\ne-1|s_1, a_1)=0$，此外获取某个reward也可以是随机的）。
+<figure><img src="https://raw.githubusercontent.com/yangtt57/PicGo-Images/master/img/20260212001606138.png"
+         alt="A tabular representation of the process of obtaining rewards"/><figcaption>
+            <p>A tabular representation of the process of obtaining rewards</p>
+        </figcaption>
+</figure>
+</p>
+<h3 id="trajectories-returns-and-episodes">Trajectories, returns, and episodes</h3>
+<p>Trajectory 是一个 <code>state-action-reward</code>链，这个链的<code>return</code>就是沿着这条路径的reward加和的结果，在下图里面，左侧图路径的return是1，右侧的return是0。
+<figure><img src="https://raw.githubusercontent.com/yangtt57/PicGo-Images/master/img/20260212002055459.png"
+         alt="Trajectories obtained by following two policies"/><figcaption>
+            <p>Trajectories obtained by following two policies</p>
+        </figcaption>
+</figure>
+</p>
+<p>在上面的例子中是到达$s_9$这个状态就停止了，但是也很可能不停止，因为在$s_9$无论采取什么动作他的reward都是正的，所以这样策略下进行的trajectory的return是无穷大的。为了避免这种情况，可以因为discount factor $\gamma$，这样我们得到的return结果是：
+$$\text{discounted return} = 0 + \gamma 0 + \gamma^2 0 + \gamma^3 1 + \gamma^4 1 + \gamma^5 1 + \dots = \gamma^3\frac{1}{1-\gamma}, \gamma \in (0,1)$$
+引入这样一个因子可以带来两个好处：</p>
+<ul>
+<li>不会出现无限长的trajectory了</li>
+<li>可以用来调整是关注更近未来的reward还是更远未来的reward。当 $\gamma$ 接近于0的时候，后面的高次方项就非常小了，因此是关注更近的未来；当他的值接近于1的时候，agent就会关注更远的未来。</li>
+</ul>
+<p>Episode 是指agent从初始状态开始，直到达到终止状态为止的一段完整的交互过程。这样的一个任务就被称为episodic task，他有着明确的开始点和结束点；相对应的是continuing task，他没有明确的结束，永无止境地进行。</p>
+<h3 id="markov-decision-processes">Markov decision processes</h3>
+<p>随机过程是随时间变化的时间变量的集合，${X(t) | t \in T}$，马尔可夫性质是说某个时刻的状态只取决于上一个的时刻的状态，也就是$P(s_{t+1} | s_t) = P(s_{t+1} | s_t, s_{t-1}, \cdots, s_1)$，马尔可夫过程是具有马尔可夫性质的随机过程，也被称为马尔可夫链。给定一个马尔可夫过程，我们就可以从某个状态出发，根据它的状态转移矩阵生成一个状态序列（episode）。
+<figure><img src="https://raw.githubusercontent.com/yangtt57/PicGo-Images/master/img/20260212013037272.png"
+         alt="马尔可夫过程示例"/><figcaption>
+            <p>马尔可夫过程示例</p>
+        </figcaption>
+</figure>
+
+在马尔可夫过程的基础上加入reward和折扣因子，就得到了马尔可夫奖励过程。上面这些过程的状态转移都是自发进行的，如果我们再在集中加入action就构成了马尔可夫决策过程，一个完整的马尔可夫决策过程包含下面这几个关键组件：</p>
+<ul>
+<li>Sets：
+<ul>
+<li>状态空间，所有状态的集合</li>
+<li>动作空间，所有动作的集合，具体是个每个状态相关的</li>
+<li>奖励集合，每个状态+动作对应得到的奖励，$R(s,a)$</li>
+</ul>
+</li>
+<li>Model:
+<ul>
+<li>状态转移概率，在状态s，采取动作a转移到状态s&rsquo;的概率是$p(s'|s,a)$</li>
+<li>reward概率，在状态s，采取动作a得到奖励r的概率是$p(r|s,a)$</li>
+</ul>
+</li>
+<li>Policy:
+<ul>
+<li>在状态s，采取动作a的概率是$\pi(a|s)$</li>
+</ul>
+</li>
+<li>Markov property:
+<ul>
+<li>历史无关的性质，$p(s_{t+1}|s_t, a_t, \cdots, s_1, a_1) = p(s_{t+1} | s_t, a_t)$</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+          </div>
+        </div>
+        
+          <div class="row">
+            <div class="col-xs-12">
+              
+            </div>
+          </div>
+
+          
+
+
+
+          
+          
+          <div style="height: 50px;"></div>
+          
+        
 
         <div class="site-footer">
   
@@ -322,7 +433,13 @@
     </div>
   </article>
 
-  
+  <script src="/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
+</script>
+
 <script>
   
   document.addEventListener("DOMContentLoaded", function() {
@@ -347,6 +464,7 @@
   });
 </script>
 
-</body>
+  
 
+</body>
 </html>
